@@ -41,6 +41,14 @@ class List_model extends CI_Model{
   {
   	$this->db->where('id', $id);
 	$this->db->delete('lists');
+	// $this->delete_tasks_of_list($id);
 	return;
+  }
+
+  public function user_lists($user_id)
+  {
+  	$query = $this->db->order_by('created_at', 'desc')->get_where('lists', ['user_id' => $user_id]);
+
+	return $query->result();
   }
 }

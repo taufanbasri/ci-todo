@@ -21,3 +21,28 @@
 
 <h1>Welcome in To-Do App</h1>
 <p class="lead">Simple task manager app.</p>
+<br>
+
+<h3>My Latest Lists</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>List Name</th>
+			<th>Created On</th>
+			<th>View</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php if (isset($lists)): ?>
+			<?php foreach ($lists as $list): ?>
+				<tr>
+					<td><?= $list->name ?></td>
+					<td><?= $list->created_at ?></td>
+					<td>
+						<a href="<?= base_url(); ?>lists/show/<?= $list->id ?>">View List</a>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+		<?php endif; ?>
+	</tbody>
+</table>
