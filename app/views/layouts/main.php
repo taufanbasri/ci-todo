@@ -21,7 +21,7 @@
 	          </ul>
 
 	          <ul class="nav navbar-nav navbar-right">
-	            <!-- <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li> -->
+	            <li><a href="<?= base_url(); ?>users/register">Register</a></li>
 	          </ul>
 
 	        </div>
