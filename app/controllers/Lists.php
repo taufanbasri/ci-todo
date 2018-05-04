@@ -58,4 +58,29 @@ class Lists extends CI_Controller{
 
 	$this->load->view('layouts/main', $data);
   }
+
+  public function edit($id)
+  {
+	$this->form_validation->set_rules('name', 'Name', 'trim|required');
+	$this->form_validation->set_rules('body', 'Body', 'trim');
+
+	if ($this->form_validation->run() == FALSE) {
+		$data['list'] = $this->list_model->edit($id);
+		$data['main_content'] = 'lists/edit';
+
+		$this->load->view('layouts/main', $data);
+	} else {
+		$data = [
+			'name' => $this->input->post('name'),
+			'body' => $this->input->post('body'),
+			'user_id' => $this->session->userdata('user_id')
+		];
+
+		if ($this->list_model->update($id, $data)) {
+			$this->session->set_flashdata('list_updated', 'Your task list has been updated');
+
+			redirect('lists');
+		}
+	}
+  }
 }

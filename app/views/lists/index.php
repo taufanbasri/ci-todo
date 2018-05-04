@@ -3,6 +3,11 @@
 		<?= $this->session->flashdata('list_created') ?>
 	</div>
 <?php endif; ?>
+<?php if ($this->session->flashdata('list_updated')): ?>
+	<div class="alert alert-success">
+		<?= $this->session->flashdata('list_updated') ?>
+	</div>
+<?php endif; ?>
 
 <a href="<?= base_url() ?>lists/create" class="pull-right">Create a New List</a>
 <h1>Lists</h1>

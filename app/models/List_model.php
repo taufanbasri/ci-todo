@@ -21,4 +21,19 @@ class List_model extends CI_Model{
 
 	return $query->row();
   }
+
+  public function edit($id)
+  {
+	$query = $this->db->get_where('lists', ['id' => $id]);
+
+	return $query->row();
+  }
+
+  public function update($id, $data)
+  {
+  	$this->db->where('id', $id);
+	$this->db->update('lists', $data);
+
+	return TRUE;
+  }
 }

@@ -1,6 +1,6 @@
 <ul id="actions">
 	<li><a href="<?= base_url(); ?>tasks/add/<?= $list->id; ?>">Add Task</a></li>
-	<li><a href="<?= base_url(); ?>lists/<?= $list->id; ?>/edit">Edit List</a></li>
+	<li><a href="<?= base_url(); ?>lists/edit/<?= $list->id; ?>">Edit List</a></li>
 	<li><a onclick="return confirm('Are you sure?')" href="<?= base_url(); ?>lists/<?= $list->id; ?>/delete">Delete List</a></li>
 </ul>
 
