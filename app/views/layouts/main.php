@@ -21,7 +21,11 @@
 	          </ul>
 
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="<?= base_url(); ?>users/register">Register</a></li>
+				  <?php if ($this->session->userdata('logged_in')): ?>
+					  <li><a href="#">Welcome, <?= $this->session->userdata('username') ?></a></li>
+				  <?php else: ?>
+					  <li><a href="<?= base_url(); ?>users/register">Register</a></li>
+				  <?php endif; ?>
 	          </ul>
 
 	        </div>
