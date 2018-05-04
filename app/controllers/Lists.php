@@ -83,4 +83,13 @@ class Lists extends CI_Controller{
 		}
 	}
   }
+
+  public function delete($id)
+  {
+  	$this->list_model->destroy($id);
+
+	$this->session->set_flashdata('list_deleted', 'Your task list has been deleted');
+
+	redirect('lists');
+  }
 }

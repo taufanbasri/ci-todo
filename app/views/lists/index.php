@@ -8,6 +8,11 @@
 		<?= $this->session->flashdata('list_updated') ?>
 	</div>
 <?php endif; ?>
+<?php if ($this->session->flashdata('list_deleted')): ?>
+	<div class="alert alert-danger">
+		<?= $this->session->flashdata('list_deleted') ?>
+	</div>
+<?php endif; ?>
 
 <a href="<?= base_url() ?>lists/create" class="pull-right">Create a New List</a>
 <h1>Lists</h1>
