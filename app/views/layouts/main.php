@@ -58,7 +58,7 @@
 
 			<footer>
 		        <div class="row">
-		          <div class="col-lg-12 text-center">
+		          <div class="col-lg-12">
 		            <p>&copy; Copyright 2018</p>
 		          </div>
 		        </div>
