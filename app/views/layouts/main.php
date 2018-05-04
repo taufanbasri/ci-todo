@@ -32,8 +32,12 @@
 			<div class="page-header">
 		        <div class="row">
 					<div class="col-lg-3 col-md-3 col-sm-4">
-						<div class="list-group table-of-contents">
-						<a class="list-group-item" href="#">Navbar</a>
+						<div class="well well-lg">
+							<div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <?php $this->load->view('users/login'); ?>
+                                </div>
+                            </div>
 						</div>
 					</div>
 					<div class="col-lg-9 col-md-9 col-sm-8">
