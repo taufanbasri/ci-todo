@@ -18,6 +18,11 @@
 	            <li>
 	              <a href="<?= base_url() ?>">Home</a>
 	            </li>
+				<?php if ($this->session->userdata('logged_in')): ?>
+					<li>
+						<a href="<?= base_url() ?>lists">My Lists</a>
+					</li>
+				<?php endif; ?>
 	          </ul>
 
 	          <ul class="nav navbar-nav navbar-right">
