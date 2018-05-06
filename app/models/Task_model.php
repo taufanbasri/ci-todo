@@ -30,4 +30,19 @@ class Task_model extends CI_Model{
 
 	  return $query->row();
   }
+
+  public function get_task($id)
+  {
+  	$query = $this->db->get_where('tasks', ['id' => $id]);
+
+	return $query->row();
+  }
+
+  public function update($id, $data)
+  {
+  	$this->db->where('id', $id);
+	$this->db->update('tasks', $data);
+
+	return TRUE;
+  }
 }
