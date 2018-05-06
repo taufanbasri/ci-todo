@@ -5,6 +5,33 @@
 </ul>
 
 <h1><?= $list->name ?></h1>
+
+<?php if ($this->session->flashdata('task_created')): ?>
+	<div class="alert alert-success">
+		<?= $this->session->flashdata('task_created') ?>
+	</div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('task_updated')): ?>
+	<div class="alert alert-success">
+		<?= $this->session->flashdata('task_updated') ?>
+	</div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('task_deleted')): ?>
+	<div class="alert alert-success">
+		<?= $this->session->flashdata('task_deleted') ?>
+	</div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('marked_complete')): ?>
+	<div class="alert alert-success">
+		<?= $this->session->flashdata('marked_complete') ?>
+	</div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('marked_new')): ?>
+	<div class="alert alert-success">
+		<?= $this->session->flashdata('marked_new') ?>
+	</div>
+<?php endif; ?>
+
 Create on: <strong><?= date('d-m-Y', strtotime($list->created_at)) ?></strong>
 <br><br>
 <div style="max-width: 500px;">

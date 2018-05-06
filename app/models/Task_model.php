@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Task_model extends CI_Model{
 
+  public function store($data)
+  {
+	$query = $this->db->insert('tasks', $data);
+
+	return $query;
+  }
+
   public function show($id)
   {
 	$query = $this->db->get_where('tasks', ['id' => $id]);
@@ -15,5 +22,12 @@ class Task_model extends CI_Model{
   	$query = $this->db->get_where('tasks', ['id' => $id]);
 
 	return $query->row()->is_completed;
+  }
+
+  public function get_list($list_id)
+  {
+      $query = $this->db->get_where('lists', ['id' => $list_id]);
+
+	  return $query->row();
   }
 }
