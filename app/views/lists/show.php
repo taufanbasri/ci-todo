@@ -37,3 +37,16 @@ Create on: <strong><?= date('d-m-Y', strtotime($list->created_at)) ?></strong>
 <div style="max-width: 500px;">
 	<?= $list->body ?>
 </div>
+<br><br>
+
+<?php if ($completed_task): ?>
+	<ul>
+		<?php foreach ($completed_task as $task): ?>
+			<li>
+				<a href="<?php echo base_url(); ?>tasks/show/<?php echo $task->id; ?>"><?php echo $task->name; ?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+<?php else: ?>
+	<p>There are no current task.</p>
+<?php endif; ?>

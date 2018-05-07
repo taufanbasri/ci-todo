@@ -51,4 +51,33 @@ class List_model extends CI_Model{
 
 	return $query->result();
   }
+
+  public function get_tasks($id, $is_completed = true)
+  {
+  	$this->db->select('
+		tasks.name,
+		tasks.body,
+		tasks.id,
+		lists.name as list_name,
+		lists.body as list_body,
+	');
+
+	$this->db->from('tasks');
+	$this->db->join('lists', 'lists.id = tasks.list_id');
+	$this->db->where('tasks.list_id', $id);
+
+	if ($is_completed == TRUE) {
+		$this->db->where('tasks.is_completed', 0);
+	} else {
+		$this->db->where('tasks.is_completed', 1);
+	}
+
+	$query = $this->db->get();
+
+	if ($query->num_rows() < 1) {
+		return FALSE;
+	}
+
+	return $query->result();
+  }
 }
