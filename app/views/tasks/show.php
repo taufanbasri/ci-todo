@@ -7,7 +7,7 @@
 	<?php else: ?>
 		<li><a href="<?= base_url(); ?>tasks/mark_complete/<?= $task->id; ?>">Mark Complete</a></li>
 	<?php endif; ?>
-	<li><a onclick="return confirm('Are you sure?')" href="<?= base_url(); ?>tasks/delete/<?= $task->id; ?>">Delete Task</a></li>
+	<li><a onclick="return confirm('Are you sure?')" href="<?= base_url(); ?>tasks/delete/<?= $task->list_id; ?>/<?= $task->id ?>">Delete Task</a></li>
 </ul>
 
 <h1><?= $task->name ?></h1>

@@ -45,4 +45,12 @@ class Task_model extends CI_Model{
 
 	return TRUE;
   }
+
+  public function destroy($id)
+  {
+  	$this->db->where('id', $id);
+	$this->db->delete('tasks');
+
+	return TRUE;
+  }
 }

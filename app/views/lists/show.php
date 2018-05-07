@@ -39,14 +39,28 @@ Create on: <strong><?= date('d-m-Y', strtotime($list->created_at)) ?></strong>
 </div>
 <br><br>
 
-<?php if ($completed_task): ?>
+<h4>Active Tasks</h4>
+<?php if ($active_task): ?>
 	<ul>
-		<?php foreach ($completed_task as $task): ?>
+		<?php foreach ($active_task as $task): ?>
 			<li>
 				<a href="<?php echo base_url(); ?>tasks/show/<?php echo $task->id; ?>"><?php echo $task->name; ?></a>
 			</li>
 		<?php endforeach; ?>
 	</ul>
 <?php else: ?>
-	<p>There are no current task.</p>
+	<p>There are no active task.</p>
+<?php endif; ?>
+
+<h4>Completed Tasks</h4>
+<?php if ($inactive_task): ?>
+	<ul>
+		<?php foreach ($inactive_task as $task): ?>
+			<li>
+				<a href="<?php echo base_url(); ?>tasks/show/<?php echo $task->id; ?>"><?php echo $task->name; ?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+<?php else: ?>
+	<p>There are no completed task.</p>
 <?php endif; ?>

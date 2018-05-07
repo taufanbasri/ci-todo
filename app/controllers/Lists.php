@@ -51,8 +51,8 @@ class Lists extends CI_Controller{
   public function show($id)
   {
   	$data['list'] = $this->list_model->show($id);
-	$data['completed_task'] = $this->list_model->get_tasks($id, true);
-	$data['uncompleted_task'] = $this->list_model->get_tasks($id, false);
+	$data['active_task'] = $this->list_model->get_tasks($id, true);
+	$data['inactive_task'] = $this->list_model->get_tasks($id, false);
 
 	$data['main_content'] = 'lists/show';
 

@@ -70,4 +70,13 @@ class Tasks extends CI_Controller{
 			}
 		}
 	}
+
+	public function delete($list_id, $id)
+	{
+		$this->task_model->destroy($id);
+
+		$this->session->set_flashdata('task_deleted', 'Your task has been deleted');
+
+		redirect('lists/show/' .$list_id);
+	}
 }
