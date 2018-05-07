@@ -47,7 +47,7 @@ class List_model extends CI_Model{
 
   public function user_lists($user_id)
   {
-  	$query = $this->db->order_by('created_at', 'desc')->get_where('lists', ['user_id' => $user_id]);
+  	$query = $this->db->order_by('created_at', 'asc')->get_where('lists', ['user_id' => $user_id]);
 
 	return $query->result();
   }

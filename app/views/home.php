@@ -46,3 +46,31 @@
 		<?php endif; ?>
 	</tbody>
 </table>
+
+<h3>Latest Task</h3>
+<table class="table table-striped" width="50%" cellspacing="5" cellpadding="5">
+	<thead>
+		<tr>
+			<th>Task Name</th>
+			<th>List Name</th>
+			<th>Created On</th>
+			<th>View</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php if (isset($tasks)): ?>
+			<?php foreach ($tasks as $task): ?>
+				<tr>
+					<td><?php echo $task->task_name; ?></td>
+					<td><?php echo $task->name; ?></td>
+					<td><?php echo $task->created_at; ?></td>
+					<td>
+						<a href="<?php echo base_url(); ?>tasks/show/<?= $task->id; ?>">View Task</a>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+		<?php else: ?>
+			No task.
+		<?php endif; ?>
+	</tbody>
+</table>

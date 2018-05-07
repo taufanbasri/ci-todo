@@ -8,7 +8,7 @@ class Home extends CI_Controller{
 	  if ($this->session->userdata('logged_in')) {
 	  	$user_id = $this->session->userdata('user_id');
 		$data['lists'] = $this->list_model->user_lists($user_id);
-		// $data['tasks'] = $this->task_model->user_tasks($user_id);
+		$data['tasks'] = $this->task_model->user_tasks($user_id);
 	  }
 
 	  $data['main_content'] = 'home';

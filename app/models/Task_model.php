@@ -71,4 +71,21 @@ class Task_model extends CI_Model{
 
 	return TRUE;
   }
+
+  public function user_tasks($user_id)
+  {
+	$this->db->select('
+		tasks.id as id,
+		tasks.name as task_name,
+		lists.name,
+		tasks.created_at as created_at,
+	');
+  	$this->db->where('user_id', $user_id);
+	$this->db->join('tasks', 'lists.id = tasks.list_id');
+	$this->db->order_by('tasks.created_at', 'asc');
+
+	$query = $this->db->get('lists');
+
+	return $query->result();
+  }
 }
